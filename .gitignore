@@ -21,3 +21,8 @@ cabal.project.local
 cabal.project.local~
 .HTF/
 .ghc.environment.*
+first_prog/first_prog
+first_prog/email
+hello/hello
+.gitignore
+hello/testprogram
