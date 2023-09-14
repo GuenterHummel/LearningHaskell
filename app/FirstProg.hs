@@ -1,6 +1,6 @@
-main :: IO()
+module Main where
 
-main = do
+main = dos
   print "Who is the email for?"
   recipient <- getLine
   print "What is the Title?"
