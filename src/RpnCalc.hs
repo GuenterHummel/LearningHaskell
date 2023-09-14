@@ -1,8 +1,7 @@
 module RpnCalc where
 
 -- solveRPN:: String -> Double
-
-solveRPNinput = ["10", "4", "3", "+", "2", "*","-"]
+-- solveRPNinput = ["10", "4", "3", "+", "2", "*","-"]
 
 doubleMe :: Num a => a -> a
 doubleMe x = x + x
@@ -43,8 +42,14 @@ boomBangs' xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, even x]
 -- [55,80,100,110]
 
 nouns = ["hobo","frog","pope"]
-addjectives = ["lazy","grouchy","scheming"]
+adjectives :: [String]
+adjectives = ["lazy","grouchy","scheming"]
 
--- >>> [adjective ++ " " ++ noun | adjective <- addjectives, noun <- nouns]
+-- >>> [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
 -- ["lazy hobo","lazy frog","lazy pope","grouchy hobo","grouchy frog","grouchy pope","scheming hobo","scheming frog","scheming pope"]
+
+
+length' xs = sum [1 | _ <- xs ]
+
+-- >>> length' nouns
 
