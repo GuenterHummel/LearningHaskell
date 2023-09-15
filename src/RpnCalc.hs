@@ -28,6 +28,7 @@ tripleSmallNumber x = if x > 50
     then x
     else x*3
 
+tripleSmallNumber' :: (Num a, Ord a) => a -> a
 tripleSmallNumber' x = ( if x > 50  then x else x*3) + 1
 -- >>> tripleSmallNumber' 30
 -- 91
