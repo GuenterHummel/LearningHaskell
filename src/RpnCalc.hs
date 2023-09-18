@@ -24,6 +24,7 @@ doubleMe x = x + x
 doubleUs :: Num a => a -> a -> a
 doubleUs x y = doubleMe x + doubleMe y
 
+tripleSmallNumber :: (Ord a, Num a) => a -> a
 tripleSmallNumber x = if x > 50
     then x
     else x*3
