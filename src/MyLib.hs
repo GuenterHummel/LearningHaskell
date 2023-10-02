@@ -1,6 +1,13 @@
-main :: IO()
+module MyLib (someFunc) where
 
-main = do
+someFunc :: IO ()
+someFunc = putStrLn "someFunc"
+
+someFunc' :: IO ()
+someFunc' = print "Hello Gue!"
+
+someFunc'' :: IO ()
+someFunc'' = do
   print "Who is the email for?"
   recipient <- getLine
   print "What is the Title?"
@@ -11,6 +18,7 @@ main = do
 
 toPart :: [Char] -> [Char]
 toPart recipient = "Dear " ++ recipient ++ ",\n"
+bodyPart :: [Char] -> [Char]
 bodyPart bookTitle = "Thanks for buying " ++ bookTitle ++ "\n"
 fromPart :: [Char] -> [Char]
 fromPart author = "Thanks,\n" ++ author 

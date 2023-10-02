@@ -1,5 +1,5 @@
 cabal-version:      2.4
-name:               haskell-code
+name:               LearningHaskell
 version:            0.1.0.0
 
 -- A short (one-line) description of the package.
@@ -13,13 +13,15 @@ version:            0.1.0.0
 
 -- The license under which the package is released.
 -- license:
-author:             Guenter Hummel
-maintainer:         guenter.hummel@sbs.co.at
+author:             Günter Hummel
+maintainer:         guenter.hummel@mac.com
 
 -- A copyright notice.
 -- copyright:
 -- category:
-extra-source-files: CHANGELOG.md
+extra-source-files:
+    README.md
+    CHANGELOG.md
 
 library
     exposed-modules:  MyLib
@@ -33,7 +35,7 @@ library
     hs-source-dirs:   src
     default-language: Haskell2010
 
-executable haskell-code
+executable LearningHaskell
     main-is:          Main.hs
 
     -- Modules included in this executable, other than Main.
@@ -43,7 +45,8 @@ executable haskell-code
     -- other-extensions:
     build-depends:
         base ^>=4.16.4.0,
-        haskell-code
+        LearningHaskell
 
     hs-source-dirs:   app
     default-language: Haskell2010
+
