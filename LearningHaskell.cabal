@@ -36,7 +36,7 @@ library
     default-language: Haskell2010
 
 executable LearningHaskell
-    main-is:          Main.hs
+    main-is:          LearnYou.hs
 
     -- Modules included in this executable, other than Main.
     -- other-modules:
@@ -45,7 +45,7 @@ executable LearningHaskell
     -- other-extensions:
     build-depends:
         base
-        LearningHaskell
+        , LearningHaskell
 
     hs-source-dirs:   app
     default-language: Haskell2010
