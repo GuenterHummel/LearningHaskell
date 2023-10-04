@@ -127,7 +127,7 @@ applyTwice f x = f (f x)
 -- >>> zipWith' (max) [6,3,2,1] [7,3,1,5]
 -- [7,3,2,5]
 
--- >>> zipWith' max [8,3] [7,5,1]
+-- >>> zipWith' max [8,3] [7,5,6,1]
 -- [8,5]
 
 -- >>> zipWith' (++) ["foo ", "bar ", "baz "] ["fighters", "hoppers", "aldrin"]
