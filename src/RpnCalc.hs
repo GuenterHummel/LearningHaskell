@@ -146,3 +146,4 @@ zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 
 flip' :: (a -> b -> c) -> (b -> a -> c)
 flip' f = g where g x y = f y x
+
