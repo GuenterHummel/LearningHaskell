@@ -1,7 +1,4 @@
 {
     "haskell.manageHLS": "GHCup",
-    "haskell.upgradeGHCup": false,
-
-    "haskell.toolchain": {
-    }
+    "haskell.upgradeGHCup": true,
 }

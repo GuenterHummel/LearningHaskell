@@ -116,6 +116,7 @@ applyTwice f x = f (f x)
 
 -- "Ho Ho Ho"
 -- >>> applyTwice (++ " Ho") "Ho" 
+-- "Ho Ho Ho"
 
 -- >>> applyTwice ("HAHA " ++) "HEY" 
 -- "HAHA HAHA HEY"
