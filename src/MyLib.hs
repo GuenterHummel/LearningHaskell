@@ -31,6 +31,6 @@ createEmail recipient bookTitle author = toPart recipient ++
 -- >>> createEmail "Mysterious" "The awful lake"  "CLUEO"                                       
 -- "Dear Mysterious,\nThanks for buying The awful lake\nThanks,\nCLUEO"
 
--- >>> createEmail "secret observer" "The Hidden Castle" "Ghostwriter X"
--- "Dear secret observer,\nThanks for buying The Hidden Castle\nThanks,\nGhostwriter X"
+-- >>> createEmail "secret observer" "The Hidden Ember" "Ghostwriter X13"
+-- "Dear secret observer,\nThanks for buying The Hidden Ember\nThanks,\nGhostwriter X13"
 
