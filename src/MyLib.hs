@@ -28,8 +28,8 @@ createEmail recipient bookTitle author = toPart recipient ++
                                          bodyPart bookTitle ++
                                          fromPart author
 
--- >>> createEmail "Mysterious" "The awful lake"  "CLUEO"                                       
--- "Dear Mysterious,\nThanks for buying The awful lake\nThanks,\nCLUEO"
+-- >>> createEmail "reader" "Wuthering Heights"  "Emily Bronte"                                       
+-- "Dear reader,\nThanks for buying Wuthering Heights\nThanks,\nEmily Bronte"
 
 -- >>> createEmail "secret observer" "The Hidden Ember" "Ghostwriter X13"
 -- "Dear secret observer,\nThanks for buying The Hidden Ember\nThanks,\nGhostwriter X13"

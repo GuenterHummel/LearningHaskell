@@ -45,32 +45,34 @@ tripleSmallNumber' x = ( if x > 50  then x else x*3) + 1
 boomBangs :: Integral a => [a] -> [String]
 boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
 
--- >>> boomBangs' [7..13]
--- ["BOOM!","BANG!","BANG!"]
+-- >>> boomBangs' [5..14]
+-- ["BOOM!","BOOM!","BANG!","BANG!","BANG!"]
 
 boomBangs' :: Integral a => [a] -> [String]
 boomBangs' xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, even x]
 
--- >>> [ x | x <- [10..20], x /= 13, x /= 15, x /= 19]
+-- >>> [ x | x <- [10..21], x /= 13, x /= 15, x /= 19, x /= 21]
 -- [10,11,12,14,16,17,18,20]
 
 -- >>> [x+y | x <- [1,2,3], y <- [10,100,1000]]
 -- [11,101,1001,12,102,1002,13,103,1003]
 
--- >>> [x*y | x <- [2,5,10], y <- [8,10,11], x*y > 50]
--- [55,80,100,110]
+-- >>> [x*y | x <- [2,5,10], y <- [8,10,11], x*y > 20]
+-- [22,40,50,55,80,100,110]
 
-nouns = ["hobo","frog","pope"]
+nouns = ["hobo","frog","pope","smurf"]
 adjectives :: [String]
-adjectives = ["lazy","grouchy","scheming"]
+adjectives = ["lazy","grouchy","scheming","heinious"]
 
 -- >>> [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
--- ["lazy hobo","lazy frog","lazy pope","grouchy hobo","grouchy frog","grouchy pope","scheming hobo","scheming frog","scheming pope"]
+-- ["lazy hobo","lazy frog","lazy pope","lazy smurf","grouchy hobo","grouchy frog","grouchy pope","grouchy smurf","scheming hobo","scheming frog","scheming pope","scheming smurf","heinious hobo","heinious frog","heinious pope","heinious smurf"]
 
 
+length' :: Num a => [t] -> a
 length' xs = sum [1 | _ <- xs ]
 
 -- >>> length' nouns
+-- 3
 
 multThree :: Int -> (Int -> (Int -> Int))
 multThree x y z = x * y * z
