@@ -133,8 +133,8 @@ applyTwice f x = f (f x)
 -- >>> zipWith' (++) ["foo ", "bar ", "baz "] ["fighters", "hoppers", "aldrin"]
 -- ["foo fighters","bar hoppers","baz aldrin"]
 
--- >>> zipWith' (*) [1,2,3] [3,2,2]
--- [3,4,6]
+-- >>> zipWith' (+) [1,2,3,4] [1,2,3,4]
+-- [2,4,6,8]
 
 -- >>> zipWith' (zipWith' (*)) [[1,2,3],[3,5,6],[2,3,4]] [[3,2,2],[3,4,5],[5,4,3]]
 -- [[3,4,6],[9,20,30],[10,12,12]]
