@@ -31,10 +31,10 @@ tripleSmallNumber x = if x > 50
     then x
     else x*3
 
-tripleSmallNumber' :: (Num a, Ord a) => a -> a
+tripleSmallNumber' :: (Ord a, Num a) => a -> a
 tripleSmallNumber' x = ( if x > 50  then x else x*3) + 1
--- >>> tripleSmallNumber' 30
--- 91
+-- >>> tripleSmallNumber' 40
+-- 121
 
 -- >>> tripleSmallNumber' 100
 -- 101
@@ -47,6 +47,7 @@ boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
 
 -- >>> boomBangs' [5..14]
 -- ["BOOM!","BOOM!","BANG!","BANG!","BANG!"]
+
 
 boomBangs' :: Integral a => [a] -> [String]
 boomBangs' xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, even x]
@@ -72,7 +73,10 @@ length' :: Num a => [t] -> a
 length' xs = sum [1 | _ <- xs ]
 
 -- >>> length' nouns
--- 3
+-- 4
+
+--- >>> length' adjectives
+-- 4
 
 multThree :: Int -> (Int -> (Int -> Int))
 multThree x y z = x * y * z
