@@ -52,24 +52,23 @@ boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
 boomBangs' :: Integral a => [a] -> [String]
 boomBangs' xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, even x]
 
--- >>> [ x | x <- [10..21], x /= 13, x /= 15, x /= 19, x /= 21]
+-- >>> [ x | x <- [10..20], x /= 13, x /= 15, x /= 19]
 -- [10,11,12,14,16,17,18,20]
 
 -- >>> [x+y | x <- [1,2,3], y <- [10,100,1000]]
 -- [11,101,1001,12,102,1002,13,103,1003]
 
--- >>> [x*y | x <- [2,5,10], y <- [8,10,11], x*y > 20]
--- [22,40,50,55,80,100,110]
+-- >>> [x*y | x <- [2,5,10], y <- [8,10,11], x*y > 50]
+-- [55,80,100,110]
 
-nouns = ["hobo","frog","pope","smurf"]
+nouns = ["hobo","frog","pope"]
 adjectives :: [String]
-adjectives = ["lazy","grouchy","scheming","heinious"]
+adjectives = ["lazy","grouchy","scheming"]
 
 -- >>> [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
--- ["lazy hobo","lazy frog","lazy pope","lazy smurf","grouchy hobo","grouchy frog","grouchy pope","grouchy smurf","scheming hobo","scheming frog","scheming pope","scheming smurf","heinious hobo","heinious frog","heinious pope","heinious smurf"]
+-- ["lazy hobo","lazy frog","lazy pope","grouchy hobo","grouchy frog","grouchy pope","scheming hobo","scheming frog","scheming pope"]
 
 
-length' :: Num a => [t] -> a
 length' xs = sum [1 | _ <- xs ]
 
 -- >>> length' nouns
@@ -122,7 +121,6 @@ applyTwice f x = f (f x)
 
 -- "Ho Ho Ho"
 -- >>> applyTwice (++ " Ho") "Ho" 
--- "Ho Ho Ho"
 
 -- >>> applyTwice ("HAHA " ++) "HEY" 
 -- "HAHA HAHA HEY"
@@ -140,8 +138,8 @@ applyTwice f x = f (f x)
 -- >>> zipWith' (++) ["foo ", "bar ", "baz "] ["fighters", "hoppers", "aldrin"]
 -- ["foo fighters","bar hoppers","baz aldrin"]
 
--- >>> zipWith' (*) [1,2,3] [3,2,2]
--- [3,4,6]
+-- >>> zipWith' (+) [1,2,3,4] [1,2,3,4]
+-- [2,4,6,8]
 
 -- >>> zipWith' (zipWith' (*)) [[1,2,3],[3,5,6],[2,3,4]] [[3,2,2],[3,4,5],[5,4,3]]
 -- [[3,4,6],[9,20,30],[10,12,12]]
