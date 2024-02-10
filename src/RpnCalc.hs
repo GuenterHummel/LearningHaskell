@@ -104,6 +104,7 @@ compareWithHundred' :: (Ord a, Num a) => a -> Ordering
 compareWithHundred' x = compare x 100
 
 
+isUpperAlphanum :: Char -> Bool
 isUpperAlphanum  =  (`elem` (['A'..'Z'] ++ ['0'..'9']))
 
 -- >>> isUpperAlphanum 'A'
