@@ -1,5 +1,5 @@
 module RpnCalc where
-
+import Data.List ()
 -- solveRPN:: String -> Double
 -- solveRPNinput = ["10", "4", "3", "+", "2", "*","-"]
 
@@ -134,6 +134,10 @@ applyTwice f x = f (f x)
 -- >>> applyTwice ("HAHA " ++) "HEY" 
 -- "HAHA HAHA HEY"
 
+zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]
+zipWith' _ [] _ = []
+zipWith' _ _ [] = []
+zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 
 -- >>> zipWith' (+) [4,2,5,6] [2,6,2,3]
 -- [6,8,7,9]
@@ -153,11 +157,28 @@ applyTwice f x = f (f x)
 -- >>> zipWith' (zipWith' (*)) [[1,2,3],[3,5,6],[2,3,4]] [[3,2,2],[3,4,5],[5,4,3]]
 -- [[3,4,6],[9,20,30],[10,12,12]]
 
-zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]
-zipWith' _ [] _ = []
-zipWith' _ _ [] = []
-zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
-
 flip' :: (a -> b -> c) -> (b -> a -> c)
 flip' f = g where g x y = f y x
 
+-- >>> flip' zip [1,2,3,4,5] "hello"
+-- [('h',1),('e',2),('l',3),('l',4),('o',5)]
+
+-- >>> zip [1,2,3,4,5,6] "hello!"          
+-- [(1,'h'),(2,'e'),(3,'l'),(4,'l'),(5,'o'),(6,'!')]
+
+
+solveRPN :: String -> Double
+solveRPN = head . foldl foldingFunction [] . words
+    where
+        foldingFunction (x:y:ys) "*" = (x * y):ys
+        foldingFunction (x:y:ys) "+" = (x + y):ys
+        foldingFunction (x:y:ys) "-" = (y - x):ys
+        foldingFunction xs numberString = read numberString:xs
+
+-- >>> solveRPN "10 4 3 + 2 * -"           
+-- -4.0
+
+-- No instance for `Show (String -> Double)'
+--   arising from a use of `evalPrint'
+--   (maybe you haven't applied a function to enough arguments?)
+-- In a stmt of an interactive GHCi command: evalPrint it_aEBt
