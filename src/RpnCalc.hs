@@ -17,8 +17,8 @@ circumference' :: Double -> Double
 circumference' r = 2 * pi * r
 -- >>> circumference' 4.0
 -- 25.132741228718345
--- >>> circumference 3
--- 18.849556
+-- >>> circumference' 4
+-- 25.132741228718345
 
 doubleMe :: Num a => a -> a
 doubleMe x = x + x
@@ -82,6 +82,14 @@ multThree x y z = x * y * z
 
 -- >>> multThree 3 5 9     
 -- 135
+
+
+multThree' :: Int -> Int -> Int-> Int
+multThree' x y z = x * y * z
+
+-- >>> multThree' 3 5 9     
+-- 135
+
 
 multTwoWithNine :: Int -> Int -> Int
 multTwoWithNine = multThree 9
