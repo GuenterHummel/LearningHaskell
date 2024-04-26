@@ -1,5 +1,7 @@
 module RpnCalc where
 import Data.List ()
+import GHC.Base (DoubleBox)
+import GHC.Exts (IsString)
 -- solveRPN:: String -> Double
 -- solveRPNinput = ["10", "4", "3", "+", "2", "*","-"]
 
@@ -39,11 +41,17 @@ tripleSmallNumber' x = ( if x > 50  then x else x*3) + 1
 -- >>> tripleSmallNumber' 100
 -- 101
 
--- >>> boomBangs [7..13]
--- ["BOOM!","BOOM!","BANG!","BANG!"]
+
+add' :: (Num a, Ord a, Show a) => a -> a -> a -> String
+add' a b c = show (a + b + c) 
+-- >>> add' 1 2 4    
+-- "7"
 
 boomBangs :: Integral a => [a] -> [String]
 boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
+
+-- >>> boomBangs [7..13]
+-- ["BOOM!","BOOM!","BANG!","BANG!"]
 
 -- >>> boomBangs' [5..14]
 -- ["BOOM!","BOOM!","BANG!","BANG!","BANG!"]
