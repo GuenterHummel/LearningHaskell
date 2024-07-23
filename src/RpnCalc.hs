@@ -47,7 +47,8 @@ addPrint a b c = show(a + b + c)
 -- >>> addPrint 1 4 4    
 -- "9"
 
-add :: Integer -> Integer -> Integer
+
+add :: Num a => a -> a -> a
 add x y = x + y
 
 add3 = add 3
@@ -64,7 +65,6 @@ boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
 
 -- >>> boomBangs' [5..14]
 -- ["BOOM!","BOOM!","BANG!","BANG!","BANG!"]
-
 
 boomBangs' :: Integral a => [a] -> [String]
 boomBangs' xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, even x]
