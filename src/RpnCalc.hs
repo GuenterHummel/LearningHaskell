@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-x-partial -Wno-unrecognised-warning-flags #-}
+
 module RpnCalc where
 import Data.List ()
 import GHC.Base (DoubleBox)
