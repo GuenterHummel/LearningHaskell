@@ -2,7 +2,7 @@
 
 module RpnCalc where
 import Data.List ()
-import GHC.Base (DoubleBox)
+import GHC.Types (DoubleBox)
 import GHC.Exts (IsString)
 -- solveRPN:: String -> Double
 -- solveRPNinput = ["10", "4", "3", "+", "2", "*","-"]
