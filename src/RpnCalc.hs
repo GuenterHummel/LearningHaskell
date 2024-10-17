@@ -43,12 +43,10 @@ tripleSmallNumber' x = ( if x > 50  then x else x*3) + 1
 -- >>> tripleSmallNumber' 100
 -- 101
 
-
 addPrint :: (Num a, Ord a, Show a) => a -> a -> a -> String
 addPrint a b c = show(a + b + c) 
 -- >>> addPrint 1 4 4    
 -- "9"
-
 
 add :: Num a => a -> a -> a
 add x y = x + y
@@ -57,7 +55,6 @@ add3 = add 3
 
 -- >>> add3 5
 -- 8
-
 
 boomBangs :: Integral a => [a] -> [String]
 boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
