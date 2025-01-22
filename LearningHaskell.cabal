@@ -24,10 +24,10 @@ extra-source-files:
     CHANGELOG.md
 
 library
-    exposed-modules:  LearnYou
+    exposed-modules:  LearnYou, MyLib
 
     -- Modules included in this library but not exported.
-    other-modules:    MyLib, RpnCalc
+    other-modules:    RpnCalc
     
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -39,6 +39,7 @@ executable LearningHaskell
     main-is:          Main.hs
 
     -- Modules included in this executable, other than Main.
+    other-modules: MyLib
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:

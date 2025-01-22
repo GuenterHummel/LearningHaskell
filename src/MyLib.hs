@@ -1,32 +1,35 @@
-module MyLib (someFunc) where
+module MyLib(someFunc, someFunc', someFunc'', createEmail) 
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+  where
 
-someFunc' :: IO ()
-someFunc' = print "Hello Gue!"
+  someFunc :: IO ()
+  someFunc = putStrLn "someFunc"
 
-someFunc'' :: IO ()
-someFunc'' = do
-  print "Who is the email for?"
-  recipient <- getLine
-  print "What is the Title?"
-  title <- getLine
-  print "Who is the Author?"
-  author <- getLine
-  print (createEmail recipient title author)
+  someFunc' :: IO ()
+  someFunc' = putStrLn "someFunc'"
 
-toPart :: [Char] -> [Char]
-toPart recipient = "Dear " ++ recipient ++ ",\n"
-bodyPart :: [Char] -> [Char]
-bodyPart bookTitle = "Thanks for buying " ++ bookTitle ++ "\n"
-fromPart :: [Char] -> [Char]
-fromPart author = "Thanks,\n" ++ author 
+  someFunc'' :: IO ()
+  someFunc'' = do
+    print "Who is the email for?"
+    recipient <- getLine
+    print "What is the Title?"
+    title <- getLine
+    print "Who is the Author?"
+    author <- getLine
+    print (createEmail recipient title author)
 
-createEmail :: [Char] -> [Char] -> [Char] -> [Char]
-createEmail recipient bookTitle author = toPart recipient ++ 
-                                         bodyPart bookTitle ++
-                                         fromPart author
+  toPart :: [Char] -> [Char]
+  toPart recipient = "Dear " ++ recipient ++ ",\n"
+  bodyPart :: [Char] -> [Char]
+  bodyPart bookTitle = "Thanks for buying " ++ bookTitle ++ "\n"
+  fromPart :: [Char] -> [Char]
+  fromPart author = "Thanks,\n" ++ author 
+
+  createEmail :: [Char] -> [Char] -> [Char] -> [Char]
+  createEmail recipient bookTitle author = 
+    toPart recipient ++ 
+    bodyPart bookTitle ++
+    fromPart author
 
 -- >>> createEmail "reader" "Wuthering Heights"  "Emily Bronte Marlow"                                       
 -- "Dear reader,\nThanks for buying Wuthering Heights\nThanks,\nEmily Bronte Marlow"
