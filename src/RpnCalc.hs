@@ -9,8 +9,8 @@ import GHC.Exts (IsString)
 
 factorial :: Integer -> Integer
 factorial n = product [1..n]
--- >>> factorial 20
--- 2432902008176640000
+-- >>> factorial 10
+-- 3628800
 
 circumference :: Float -> Float
 circumference r = 2 * pi * r
@@ -19,9 +19,10 @@ circumference r = 2 * pi * r
 
 circumference' :: Double -> Double
 circumference' r = 2 * pi * r
+-- >>> circumference' 5.0
+-- 31.41592653589793
+
 -- >>> circumference' 4.0
--- 25.132741228718345
--- >>> circumference' 4
 -- 25.132741228718345
 
 doubleMe :: Num a => a -> a
@@ -37,8 +38,11 @@ tripleSmallNumber x = if x > 50
 
 tripleSmallNumber' :: (Ord a, Num a) => a -> a
 tripleSmallNumber' x = ( if x > 50  then x else x*3) + 1
--- >>> tripleSmallNumber' 40
--- 121
+-- >>> tripleSmallNumber' 42
+-- 127
+
+-- >>> tripleSmallNumber' 49
+-- 148
 
 -- >>> tripleSmallNumber' 100
 -- 101
