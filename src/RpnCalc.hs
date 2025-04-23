@@ -92,10 +92,10 @@ adjectives = ["lazy","grouchy","scheming"]
 length' xs = sum [1 | _ <- xs ]
 
 -- >>> length' nouns
--- 4
+-- 3
 
 --- >>> length' adjectives
--- 4
+-- 3
 
 multThree :: Int -> (Int -> (Int -> Int))
 multThree x y z = x * y * z
