@@ -66,14 +66,17 @@ boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
 -- >>> boomBangs [7..13]
 -- ["BOOM!","BOOM!","BANG!","BANG!"]
 
--- >>> boomBangs' [5..14]
+-- >>> boomBangs [5..14]
 -- ["BOOM!","BOOM!","BANG!","BANG!","BANG!"]
 
 boomBangs' :: Integral a => [a] -> [String]
 boomBangs' xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, even x]
 
--- >>> [ x | x <- [10..20], x /= 13, x /= 15, x /= 19]
--- [10,11,12,14,16,17,18,20]
+-- >>> boomBangs' [7..13]
+-- ["BOOM!","BANG!","BANG!"]
+
+-- >>> boomBangs' [5..15]
+-- ["BOOM!","BOOM!","BANG!","BANG!","BANG!"]
 
 -- >>> [x+y | x <- [1,2,3], y <- [10,100,1000]]
 -- [11,101,1001,12,102,1002,13,103,1003]
