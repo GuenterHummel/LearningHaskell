@@ -19,8 +19,8 @@ circumference r = 2 * pi * r
 
 circumference' :: Double -> Double
 circumference' r = 2 * pi * r
--- >>> circumference' 5.0
--- 31.41592653589793
+-- >>> circumference' 4.1
+-- 25.7610597594363
 
 -- >>> circumference' 4.0
 -- 25.132741228718345
