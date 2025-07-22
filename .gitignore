@@ -26,3 +26,5 @@ first_prog/email
 hello/hello
 .gitignore
 hello/testprogram
+.lsp/.cache/db.transit.json
+.clj-kondo/.cache/v1/lock

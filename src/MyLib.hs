@@ -38,3 +38,4 @@ module MyLib(someFunc, someFunc', someFunc'', createEmail)
 -- "Dear secret observer,\nThanks for buying The Hidden Ember\nThanks,\nGhostwriter X13-Z6 "
 
 -- >>> createEmail "mysterios riddler" "The Most Secret Riddles of Azurania" "Far Faraway"
+-- "Dear mysterios riddler,\nThanks for buying The Most Secret Riddles of Azurania\nThanks,\nFar Faraway"
