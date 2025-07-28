@@ -21,7 +21,7 @@ module MyLib(someFunc, someFunc', someFunc'', createEmail)
   toPart :: [Char] -> [Char]
   toPart recipient = "Dear " ++ recipient ++ ",\n"
   bodyPart :: [Char] -> [Char]
-  bodyPart bookTitle = "Thanks for buying " ++ bookTitle ++ "\n"
+  bodyPart bookTitle = "Thank you very much for buying " ++ bookTitle ++ "\n"
   fromPart :: [Char] -> [Char]
   fromPart author = "Thanks,\n" ++ author 
 
@@ -31,11 +31,11 @@ module MyLib(someFunc, someFunc', someFunc'', createEmail)
     bodyPart bookTitle ++
     fromPart author
 
--- >>> createEmail "reader" "Wuthering Heights"  "Emily Bronte Marlow"                                       
--- "Dear reader,\nThanks for buying Wuthering Heights\nThanks,\nEmily Bronte Marlow"
+-- >>> createEmail "prominent reader" "Wuthering Heights"  "Emily Bronte Marlow"                                       
+-- "Dear prominent reader,\nThank you very much for buying Wuthering Heights\nThanks,\nEmily Bronte Marlow"
 
--- >>> createEmail "secret observer" "The Hidden Ember" "Ghostwriter X13-Z6 "
--- "Dear secret observer,\nThanks for buying The Hidden Ember\nThanks,\nGhostwriter X13-Z6 "
+-- >>> createEmail "secret observer 2" "The Hidden Ember" "Ghostwriter X13-Z6 "
+-- "Dear secret observer 2,\nThank you very much for buying The Hidden Ember\nThanks,\nGhostwriter X13-Z6 "
 
 -- >>> createEmail "mysterios riddler" "The Most Secret Riddles of Azurania" "Far Faraway"
--- "Dear mysterios riddler,\nThanks for buying The Most Secret Riddles of Azurania\nThanks,\nFar Faraway"
+-- "Dear mysterios riddler,\nThank you very much for buying The Most Secret Riddles of Azurania\nThanks,\nFar Faraway"

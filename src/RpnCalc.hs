@@ -103,26 +103,20 @@ length' xs = sum [1 | _ <- xs ]
 multThree :: Int -> (Int -> (Int -> Int))
 multThree x y z = x * y * z
 
--- >>> multThree 3 5 9     
--- 135
-
+-- >>> multThree 3 11 10222  
+-- 337326
 
 multThree' :: Int -> Int -> Int-> Int
 multThree' x y z = x * y * z
 
--- >>> multThree' 3 5 9     
--- 135
-
+-- >>> multThree' 3 5 11     
+-- 165
 
 multTwoWithNine :: Int -> Int -> Int
 multTwoWithNine = multThree 9
 
--- >>> multTwoWithNine 2 3
--- 54
-
-
-multOneWithSevenNine :: Int -> Int 
-multOneWithSevenNine = multThree 7 9
+-- >>> multTwoWithNine 2 1
+-- 594
 
 -- >>> multOneWithSevenNine 2 
 -- 126
@@ -153,6 +147,7 @@ applyTwice f x = f (f x)
 
 -- "Ho Ho Ho"
 -- >>> applyTwice (++ " Ho") "Ho" 
+-- "Ho Ho Ho"
 
 -- >>> applyTwice ("HAHA " ++) "HEY" 
 -- "HAHA HAHA HEY"
