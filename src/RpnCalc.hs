@@ -9,8 +9,8 @@ import GHC.Exts (IsString)
 
 factorial :: Integer -> Integer
 factorial n = product [1..n]
--- >>> factorial 10
--- 3628800
+-- >>> factorial 20
+-- 2432902008176640000
 
 circumference :: Float -> Float
 circumference r = 2 * pi * r
@@ -19,10 +19,9 @@ circumference r = 2 * pi * r
 
 circumference' :: Double -> Double
 circumference' r = 2 * pi * r
--- >>> circumference' 4.1
--- 25.7610597594363
-
 -- >>> circumference' 4.0
+-- 25.132741228718345
+-- >>> circumference' 4
 -- 25.132741228718345
 
 doubleMe :: Num a => a -> a
@@ -38,18 +37,15 @@ tripleSmallNumber x = if x > 50
 
 tripleSmallNumber' :: (Ord a, Num a) => a -> a
 tripleSmallNumber' x = ( if x > 50  then x else x*3) + 1
--- >>> tripleSmallNumber' 42
--- 127
-
--- >>> tripleSmallNumber' 49
--- 148
+-- >>> tripleSmallNumber' 40
+-- 121
 
 -- >>> tripleSmallNumber' 100
 -- 101
 
 addPrint :: (Num a, Ord a, Show a) => a -> a -> a -> String
 addPrint a b c = show(a + b + c) 
--- >>> addPrint 1 4 4    
+-- >>> addPrint 2 4 3 
 -- "9"
 
 add :: Num a => a -> a -> a
@@ -57,26 +53,23 @@ add x y = x + y
 
 add3 = add 3
 
--- >>> add3 5
--- 8
+-- >>> add3 8
+-- 11
 
 boomBangs :: Integral a => [a] -> [String]
-boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
+boomBangs xs = [ if x < 15 then "BOOM!" else "BANG!" | x <- xs, odd x]
 
--- >>> boomBangs [7..13]
--- ["BOOM!","BOOM!","BANG!","BANG!"]
+-- >>> boomBangs [7..20]    
+-- ["BOOM!","BOOM!","BOOM!","BOOM!","BANG!","BANG!","BANG!"]
 
--- >>> boomBangs [5..14]
--- ["BOOM!","BOOM!","BANG!","BANG!","BANG!"]
+-- >>> boomBangs' [5..16]
+-- ["BOOM!","BOOM!","BANG!","BANG!","BANG!","BANG!"]
 
 boomBangs' :: Integral a => [a] -> [String]
 boomBangs' xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, even x]
 
--- >>> boomBangs' [7..13]
--- ["BOOM!","BANG!","BANG!"]
-
--- >>> boomBangs' [5..15]
--- ["BOOM!","BOOM!","BANG!","BANG!","BANG!"]
+-- >>> [ x | x <- [10..20], x /= 13, x /= 15, x /= 19]
+-- [10,11,12,14,16,17,18,20]
 
 -- >>> [x+y | x <- [1,2,3], y <- [10,100,1000]]
 -- [11,101,1001,12,102,1002,13,103,1003]
@@ -95,28 +88,34 @@ adjectives = ["lazy","grouchy","scheming"]
 length' xs = sum [1 | _ <- xs ]
 
 -- >>> length' nouns
--- 3
+-- 4
 
 --- >>> length' adjectives
--- 3
+-- 4
 
 multThree :: Int -> (Int -> (Int -> Int))
 multThree x y z = x * y * z
 
--- >>> multThree 3 11 10222  
--- 337326
+-- >>> multThree 3 5 9     
+-- 135
+
 
 multThree' :: Int -> Int -> Int-> Int
 multThree' x y z = x * y * z
 
--- >>> multThree' 3 5 11     
--- 165
+-- >>> multThree' 3 5 9     
+-- 135
+
 
 multTwoWithNine :: Int -> Int -> Int
 multTwoWithNine = multThree 9
 
--- >>> multTwoWithNine 2 1
--- 594
+-- >>> multTwoWithNine 2 3
+-- 54
+
+
+multOneWithSevenNine :: Int -> Int 
+multOneWithSevenNine = multThree 7 9
 
 -- >>> multOneWithSevenNine 2 
 -- 126
@@ -147,7 +146,6 @@ applyTwice f x = f (f x)
 
 -- "Ho Ho Ho"
 -- >>> applyTwice (++ " Ho") "Ho" 
--- "Ho Ho Ho"
 
 -- >>> applyTwice ("HAHA " ++) "HEY" 
 -- "HAHA HAHA HEY"
