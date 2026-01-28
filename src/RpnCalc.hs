@@ -149,8 +149,8 @@ applyTwice f x = f (f x)
 -- >>> applyTwice (++ " Ho") "Ho" 
 -- "Ho Ho Ho"
 
--- >>> applyTwice ("HAHA " ++) "HEY" 
--- "HAHA HAHA HEY"
+-- >>> applyTwice (applyTwice ("HAHA " ++) "HEY " ++) "HIHI" 
+-- "HAHA HAHA HEY HAHA HAHA HEY HIHI"
 
 zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]
 zipWith' _ [] _ = []
