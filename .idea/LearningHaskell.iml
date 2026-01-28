@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <module type="EMPTY_MODULE" version="4">
+=======
+<module type="WEB_MODULE" version="4">
+  <component name="Go" enabled="true" />
+>>>>>>> 4c3a703ccdedaac5ec9b8772c480c4e9c4de6b9e
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
