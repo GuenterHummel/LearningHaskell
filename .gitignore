@@ -28,3 +28,4 @@ hello/hello
 hello/testprogram
 .lsp/.cache/db.transit.json
 .clj-kondo/.cache/v1/lock
+db.transit.json
