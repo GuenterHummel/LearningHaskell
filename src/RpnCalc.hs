@@ -19,8 +19,10 @@ circumference r = 2 * pi * r
 
 circumference' :: Double -> Double
 circumference' r = 2 * pi * r
--- >>> circumference' 4.3
--- 27.017876
+-- >>> circumference' 4.0
+-- 25.132741228718345
+-- >>> circumference' 4
+-- 25.132741228718345
 
 doubleMe :: Num a => a -> a
 doubleMe x = x + x
