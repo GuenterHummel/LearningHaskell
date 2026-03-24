@@ -4,6 +4,7 @@ module RpnCalc where
 import Data.List ()
 
 import GHC.Exts (IsString)
+import GHC.RTS.Flags (DoCostCentres)
 -- solveRPN:: String -> Double
 -- solveRPNinput = ["10", "4", "3", "+", "2", "*","-"]
 
@@ -17,6 +18,7 @@ circumference r = 2 * pi * r
 -- >>> circumference 4.0
 -- 25.132742
 
+
 circumference' :: Double -> Double
 circumference' r = 2 * pi * r
 -- >>> circumference' 4.0
@@ -24,10 +26,15 @@ circumference' r = 2 * pi * r
 -- >>> circumference' 4
 -- 25.132741228718345
 
+circumference'' :: Floating a => a -> a
+circumference'' r = 2 * pi * r
+-- >>> circumference'' 4.0
+-- 25.132741228718345
 doubleMe :: Num a => a -> a
 doubleMe x = x + x
 -- >>> doubleMe 9
 -- 18
+
 
 doubleUs :: Num a => a -> a -> a
 doubleUs x y = doubleMe x + doubleMe y
@@ -44,6 +51,24 @@ tripleSmallNumber' x = ( if x > 50  then x else x*3) + 1
 
 -- >>> tripleSmallNumber' 100
 -- 101
+
+
+jkl :: Num a => [a] -> ([a] -> t) -> a -> t
+jkl x f y = f (map (+y) x)
+-- >>> jkl  [1,2,3] sum 2
+-- 12
+
+
+jkl' :: Num b => [b] -> ([b] -> t) -> b -> t
+jkl' x f y = f (map (+y) x)
+-- >>> jkl'  [1,2,3] sum 1  
+-- 9
+
+
+jklOptimized :: Num a => ([a] -> b) -> a -> [a] -> b
+jklOptimized f y x = f (map (+y) x)
+-- >>> jklOptimized sum 1 [1,2,3]
+-- 9
 
 addPrint :: (Num a, Ord a, Show a) => a -> a -> a -> String
 addPrint a b c = show(a + b + c) 
