@@ -16,7 +16,7 @@ module MyLib(someFunc, someFunc', someFunc'', createEmail)
     title <- getLine
     print "Who is the Author?"
     author <- getLine
-    print (createEmail recipient title author)
+    putStrLn (createEmail recipient title author)
 
   toPart :: [Char] -> [Char]
   toPart recipient = "Dear " ++ recipient ++ ",\n"
