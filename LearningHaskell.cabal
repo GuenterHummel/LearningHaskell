@@ -1,4 +1,4 @@
-cabal-version:      2.4
+cabal-version:      3.4
 name:               LearningHaskell
 version:            0.1.0.0
 
@@ -33,7 +33,8 @@ library
     -- other-extensions:
     build-depends:    base
     hs-source-dirs:   src
-    default-language: Haskell2010
+    default-language: GHC2024
+
 
 executable LearningHaskell
     main-is:          Main.hs
@@ -49,5 +50,5 @@ executable LearningHaskell
         
 
     hs-source-dirs:   src
-    default-language: Haskell2010
+    default-language: GHC2024
 
