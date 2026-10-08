@@ -216,6 +216,7 @@ solveRPN = head . foldl foldingFunction [] . words
         foldingFunction (x:y:ys) "*" = (x * y):ys
         foldingFunction (x:y:ys) "+" = (x + y):ys
         foldingFunction (x:y:ys) "-" = (y - x):ys
+        foldingFunction (x:y:ys) "//" = (x / y):ys
         foldingFunction xs numberString = read numberString:xs
 
 -- >>> solveRPN "9 4 3 + 2 * -"           
@@ -225,3 +226,6 @@ solveRPN = head . foldl foldingFunction [] . words
 --   arising from a use of `evalPrint'
 --   (maybe you haven't applied a function to enough arguments?)
 -- In a stmt of an interactive GHCi command: evalPrint it_aEBt
+
+-- >>> solveRPN "14 3 + 3 +"
+-- 20.0
