@@ -213,10 +213,10 @@ flip' f = g where g x y = f y x
 solveRPN :: String -> Double
 solveRPN = head . foldl foldingFunction [] . words
     where
-        foldingFunction (x:y:ys) "*" = (x * y):ys
-        foldingFunction (x:y:ys) "+" = (x + y):ys
+        foldingFunction (x:y:ys) "*" = (y * x):ys
+        foldingFunction (x:y:ys) "+" = (y + x):ys
         foldingFunction (x:y:ys) "-" = (y - x):ys
-        foldingFunction (x:y:ys) "//" = (x / y):ys
+        foldingFunction (x:y:ys) "//" = (y / x):ys
         foldingFunction xs numberString = read numberString:xs
 
 -- >>> solveRPN "9 4 3 + 2 * -"           
@@ -229,3 +229,8 @@ solveRPN = head . foldl foldingFunction [] . words
 
 -- >>> solveRPN "14 3 + 3 +"
 -- 20.0
+
+-- >>> solveRPN "14 3 -"
+
+-- >>> solveRPN "14 2 //"
+-- 7.0
